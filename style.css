@@ -1,0 +1,84 @@
+/* Styles globaux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Organise les enfants en colonne */
+    justify-content: flex-start; /* Aligne en haut */
+    align-items: center; /* Centre horizontalement */
+    background-color: #f4f4f9;
+    gap: 20px; /* Espacement global entre les blocs */
+}
+
+/* Conteneur principal */
+.input-container {
+    margin-top: 50px; /* Espacement depuis le haut */
+    width: 100%; /* Occupe toute la largeur */
+    max-width: 600px; /* Limite la largeur globale */
+    display: flex; /* Place input et bouton en ligne */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Aligne verticalement */
+    gap: 10px; /* Espacement entre input et bouton */
+}
+
+/* Input stylisé */
+input {
+    flex: 1; /* Prend tout l'espace disponible */
+    padding: 20px;
+    font-size: 35px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Bouton stylisé */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 35px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles pour les paragraphes */
+.paragraphes-container {
+    text-align:left; /* Centre les paragraphes */
+    max-width: 600px; /* Limite la largeur */
+}
+
+p {
+    margin: 5px 0; /* Espacement vertical des paragraphes */
+    font-size: 30px;
+    color: #333;
+    line-height: 1.5;
+}
+#well{
+    color: rgb(3, 81, 24);
+}
+#miss{
+    color: orangered;
+}
+#not{
+    color: red;
+}
+
+#win{
+    color: rgb(11, 11, 168);
+    font-size: 60px;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Motus</title>
+      <link rel="stylesheet" href="style.css" />
+      <script defer src="script.js"></script>
+    </head>
+    <body>
+      <div class="input-container">
+        <input id="word-input" type="text" placeholder="Devinez le mot" />
+        <button onclick="motus()">OK</button>
+      </div>
+      <section class="paragraphes-container">
+        <p id="try"></p>
+        <p>Bien placé: <span id="well"></span></p>
+        <p>Mal placé: <span id="miss"></span></p>
+        <p>Pas dans le mot: <span id="not"></span></p>
+        <p id="win"></p>
+      </section>
+    </body>
+  </html>
+</html>
