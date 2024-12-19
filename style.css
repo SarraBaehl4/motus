@@ -60,6 +60,7 @@ button:hover {
 .paragraphes-container {
     text-align:left; /* Centre les paragraphes */
     max-width: 600px; /* Limite la largeur */
+    display: 'none';
 }
 
 p {
@@ -72,7 +73,7 @@ p {
     color: rgb(3, 81, 24);
 }
 #miss{
-    color: orangered;
+    color: rgb(255, 213, 0);
 }
 #not{
     color: red;

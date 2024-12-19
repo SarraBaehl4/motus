@@ -1,6 +1,6 @@
 let wordToGuess = "dictionnaire";
-function compareWords() {
-  let suggestedWord = document.getElementById("word-input").value.toLowerCase();
+
+function compareWords(suggestedWord) {
   let wellPlaced = [];
   let notInWord = [];
   let missPlaced = [];
@@ -25,19 +25,19 @@ function compareWords() {
   };
 }
 
-function displayResults() {
-  let suggestedWord = document.getElementById("word-input").value.toLowerCase();
+function displayResults(suggestedWord) {
+  suggestedWord = document.getElementById("word-input").value.toLowerCase();
   let result = compareWords(suggestedWord);
   document.getElementById("well").textContent = result.wellPlaced.join(", ");
   document.getElementById("miss").textContent = result.missPlaced.join(", ");
   document.getElementById("not").textContent = result.notInWord.join(", ");
 }
 
-function motus() {
-  let suggestedWord = document.getElementById("word-input").value.toLowerCase();
-  console.log(suggestedWord);
+function motus(suggestedWord) {
+  suggestedWord = document.getElementById("word-input").value.toLowerCase();
   if (wordToGuess === suggestedWord) {
     document.getElementById("win").innerHTML = "Vous avez gagné!";
+    
   } else {
     displayResults(suggestedWord);
   }
