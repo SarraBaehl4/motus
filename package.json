@@ -1,0 +1,47 @@
+{
+  "name": "motus",
+  "version": "1.0.0",
+  "description": "Motus est un jeu télévisé où les candidats doivent deviner un mot. Leur est fourni un nombre de lettres et la première lettre du mot à deviner. Quand un candidat propose un mot, on lui dit si les lettres données sont bonnes, mal placées, ou pas dans le mot.",
+  "main": "motus.js",
+  "dependencies": {
+    "assertion-error": "^2.0.1",
+    "cac": "^6.7.14",
+    "chai": "^5.1.2",
+    "check-error": "^2.1.1",
+    "debug": "^4.4.0",
+    "deep-eql": "^5.0.2",
+    "es-module-lexer": "^1.5.4",
+    "esbuild": "^0.21.5",
+    "estree-walker": "^3.0.3",
+    "expect-type": "^1.1.0",
+    "loupe": "^3.1.2",
+    "magic-string": "^0.30.17",
+    "ms": "^2.1.3",
+    "nanoid": "^3.3.8",
+    "pathe": "^1.1.2",
+    "pathval": "^2.0.0",
+    "picocolors": "^1.1.1",
+    "postcss": "^8.4.49",
+    "rollup": "^4.28.1",
+    "siginfo": "^2.0.0",
+    "source-map-js": "^1.2.1",
+    "stackback": "^0.0.2",
+    "std-env": "^3.8.0",
+    "tinybench": "^2.9.0",
+    "tinyexec": "^0.3.1",
+    "tinypool": "^1.0.2",
+    "tinyrainbow": "^1.2.0",
+    "tinyspy": "^3.0.2",
+    "vite": "^5.4.11",
+    "vite-node": "^2.1.8",
+    "why-is-node-running": "^2.3.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.8"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "",
+  "license": "ISC"
+}

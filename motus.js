@@ -42,4 +42,4 @@ function motus(suggestedWord) {
     displayResults(suggestedWord);
   }
 }
-motus();
+module.exports = { motus }
