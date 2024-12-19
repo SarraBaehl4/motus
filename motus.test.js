@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
-import { motus } from './motus'
+import { compareWords } from './motus'
 
 test('Cas 1 de démarrage: you win', () => {
-  expect(motus(dictionnaire)).toBe("Vous avez gagné!")
+  expect(compareWords(dictionnaire)).toBe("Vous avez gagné!")
 })

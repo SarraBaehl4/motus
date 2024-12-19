@@ -1,10 +1,38 @@
+const WELL = document.getElementById("well");
+const MISS = document.getElementById("miss");
+const NOT = document.getElementById("not");
+const WIN = document.getElementById("win");
+const TRY = document.getElementById("try");
+
 let wordToGuess = "dictionnaire";
 
+function handleErrors(suggestedWord) {
+  suggestedWord = suggestedWord.trim()
+  if (suggestedWord === ''){
+    TRY.textContent = "🚨Veuillez saisir un mot valide🚨";
+    return false;
+  }else if (!isNaN(suggestedWord) && suggestedWord !== '') {
+    TRY.textContent = "🚨Veuillez saisir un mot, pas un nombre🚨";
+    return false;
+  }else if (suggestedWord.length > wordToGuess.length) {
+    TRY.textContent = "🚨Votre mot est trop long🚨";
+    return false;
+  }else{
+  TRY.textContent ='';
+  return true;
+}
+}
 function compareWords(suggestedWord) {
   let wellPlaced = [];
   let notInWord = [];
   let missPlaced = [];
-
+  if (!handleErrors(suggestedWord)) {
+    return {
+      wellPlaced,
+      missPlaced,
+      notInWord,
+    };
+  }
   let arrayOfWordToGuess = wordToGuess.split("");
   let arrayOfSuggestedWord = suggestedWord.split("");
 
@@ -18,28 +46,25 @@ function compareWords(suggestedWord) {
       notInWord.push(suggestedChar);
     }
   }
-  return {
-    wellPlaced,
-    missPlaced,
-    notInWord,
-  };
+return {
+  wellPlaced,
+  missPlaced,
+  notInWord,
 }
-
+}
 function displayResults(suggestedWord) {
   suggestedWord = document.getElementById("word-input").value.toLowerCase();
-  let result = compareWords(suggestedWord);
-  document.getElementById("well").textContent = result.wellPlaced.join(", ");
-  document.getElementById("miss").textContent = result.missPlaced.join(", ");
-  document.getElementById("not").textContent = result.notInWord.join(", ");
-}
-
-function motus(suggestedWord) {
-  suggestedWord = document.getElementById("word-input").value.toLowerCase();
   if (wordToGuess === suggestedWord) {
-    document.getElementById("win").innerHTML = "Vous avez gagné!";
-    
+    WIN.innerHTML = "🎊Vous avez gagné 🎊";
+    WELL.textContent = "";
+    MISS.textContent = "";
+    NOT.textContent = "";
   } else {
-    displayResults(suggestedWord);
+    let result = compareWords(suggestedWord);
+    WELL.textContent = result.wellPlaced.join(", ");
+    MISS.textContent = result.missPlaced.join(", ");
+    NOT.textContent = result.notInWord.join(", ");
   }
 }
-module.exports = { motus }
+
+//export {compareWords};
