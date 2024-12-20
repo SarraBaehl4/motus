@@ -1,24 +1,24 @@
-const WELL = document.getElementById("well");
-const MISS = document.getElementById("miss");
-const NOT = document.getElementById("not");
-const WIN = document.getElementById("win");
-const TRY = document.getElementById("try");
+// const WELL = document.getElementById("well");
+// const MISS = document.getElementById("miss");
+// const NOT = document.getElementById("not");
+// const WIN = document.getElementById("win");
+// const TRY = document.getElementById("try");
 
 let wordToGuess = "dictionnaire";
 
 function handleErrors(suggestedWord) {
   suggestedWord = suggestedWord.trim()
   if (suggestedWord === ''){
-    TRY.textContent = "🚨Veuillez saisir un mot valide🚨";
+    //TRY.textContent = "🚨Veuillez saisir un mot valide🚨";
     return false;
   }else if (!isNaN(suggestedWord) && suggestedWord !== '') {
-    TRY.textContent = "🚨Veuillez saisir un mot, pas un nombre🚨";
+    //TRY.textContent = "🚨Veuillez saisir un mot, pas un nombre🚨";
     return false;
   }else if (suggestedWord.length > wordToGuess.length) {
-    TRY.textContent = "🚨Votre mot est trop long🚨";
+    //TRY.textContent = "🚨Votre mot est trop long🚨";
     return false;
   }else{
-  TRY.textContent ='';
+  //TRY.textContent ='';
   return true;
 }
 }
@@ -26,7 +26,7 @@ function compareWords(suggestedWord) {
   let wellPlaced = [];
   let notInWord = [];
   let missPlaced = [];
-  if (!handleErrors(suggestedWord)) {
+  if (handleErrors(suggestedWord)=== false) {
     return {
       wellPlaced,
       missPlaced,
@@ -67,4 +67,4 @@ function displayResults(suggestedWord) {
   }
 }
 
-//export {compareWords};
+export{handleErrors};
