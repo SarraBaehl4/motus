@@ -9,17 +9,19 @@
       <script defer src="motus.js"></script>
     </head>
     <body>
-      <h1>Motus Game</h1>
+      <h1>Motus</h1>
       <div class="input-container">
         <input id="word-input" type="text" placeholder="Devinez le mot" />
         <button onclick="displayResults()">OK</button>
       </div>
       <section class="paragraphes-container">
-        <p id="try"></p>
         <p>Bien placé: <span id="well"></span></p>
         <p>Mal placé: <span id="miss"></span></p>
         <p>Pas dans le mot: <span id="not"></span></p>
+      </section>
+      <section class ='try-win-container'>
         <p id="win"></p>
+        <p id="try"></p>
       </section>
     </body>
   </html>

@@ -1,32 +1,37 @@
-// const WELL = document.getElementById("well");
-// const MISS = document.getElementById("miss");
-// const NOT = document.getElementById("not");
-// const WIN = document.getElementById("win");
-// const TRY = document.getElementById("try");
+const WELL = document.getElementById("well");
+const MISS = document.getElementById("miss");
+const NOT = document.getElementById("not");
+const WIN = document.getElementById("win");
+const TRY = document.getElementById("try");
 
 let wordToGuess = "dictionnaire";
 
 function handleErrors(suggestedWord) {
-  suggestedWord = suggestedWord.trim()
-  if (suggestedWord === ''){
-    //TRY.textContent = "🚨Veuillez saisir un mot valide🚨";
+  suggestedWord = suggestedWord.trim();
+  if (suggestedWord === "") {
+    TRY.textContent = "🚨Veuillez saisir un mot valide🚨";
+    document.querySelector('.paragraphes-container').style.display ='none';
     return false;
-  }else if (!isNaN(suggestedWord) && suggestedWord !== '') {
-    //TRY.textContent = "🚨Veuillez saisir un mot, pas un nombre🚨";
+  } else if (!isNaN(suggestedWord) && suggestedWord !== "") {
+    TRY.textContent = "🚨Veuillez saisir un mot, pas un nombre🚨";
+    document.querySelector('.paragraphes-container').style.display ='none';
     return false;
-  }else if (suggestedWord.length > wordToGuess.length) {
-    //TRY.textContent = "🚨Votre mot est trop long🚨";
+  } else if (suggestedWord.length > wordToGuess.length) {
+    TRY.textContent = "🚨Votre mot est trop long🚨";
+    document.querySelector('.paragraphes-container').style.display ='none';
     return false;
-  }else{
-  //TRY.textContent ='';
-  return true;
-}
+  } else {
+    TRY.textContent = "";
+    document.querySelector('.paragraphes-container').style.display ='block'
+    //WIN.style.display='none'
+    return true;
+  }
 }
 function compareWords(suggestedWord) {
   let wellPlaced = [];
   let notInWord = [];
   let missPlaced = [];
-  if (handleErrors(suggestedWord)=== false) {
+  if (handleErrors(suggestedWord) === false) {
     return {
       wellPlaced,
       missPlaced,
@@ -46,11 +51,11 @@ function compareWords(suggestedWord) {
       notInWord.push(suggestedChar);
     }
   }
-return {
-  wellPlaced,
-  missPlaced,
-  notInWord,
-}
+  return {
+    wellPlaced,
+    missPlaced,
+    notInWord,
+  };
 }
 function displayResults(suggestedWord) {
   suggestedWord = document.getElementById("word-input").value.toLowerCase();
@@ -59,6 +64,8 @@ function displayResults(suggestedWord) {
     WELL.textContent = "";
     MISS.textContent = "";
     NOT.textContent = "";
+    document.querySelector('.paragraphes-container').style.display ='none',
+    TRY.style.display ='none';
   } else {
     let result = compareWords(suggestedWord);
     WELL.textContent = result.wellPlaced.join(", ");
@@ -67,4 +74,4 @@ function displayResults(suggestedWord) {
   }
 }
 
-export{handleErrors};
+//export{handleErrors};
